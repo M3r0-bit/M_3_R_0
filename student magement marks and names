@@ -1,0 +1,93 @@
+#include <iostream>
+#include<string>
+using namespace std;
+int main() {
+    float mark[10] ;
+    string name[10] ;
+    int j ;
+    do
+    {
+        cout <<"press 1 to fill the data of students:\n";
+        cout <<"press 2 to print the data of students:\n";
+        cout <<"press 3 to print the all marks:\n";
+        cout << "press 4 to print all marks less than 10:\n" ;
+        cout << "press 5 to print marks more than or equal 10:\n" ;
+        cout << "press 6 to print the average:\n" ;
+        cout << "press 7 to search with student name:\n" ;
+        cout << "press 8 to search with student mark:\n" ;
+        cout << "press 0 to exit:\n" ;
+        cin >> j ;
+        switch(j){
+    case 1:{
+        for (int i =0 ; i <10 ; i++){
+            cout <<"Enter student name and marks\n" ;
+            cin >>name[i] >>mark[i] ;
+        }
+    } break;
+    /////////////////////////
+    case 2 :{
+           for (int i =0 ; i<10;i++){
+            cout <<name[i] <<"\t"<<mark[i] <<"\n" ;
+                }
+    } break;
+///////////////////////////
+    case 3 :{
+            for (int i=0 ;i<10;i++){
+            cout <<name[i] <<"\t"<<mark[i] <<endl ;
+            }
+        }break;
+///////////////////////////
+    case 4:{
+              for (int i=0 ;i<10;i++){
+                if (mark[i]<10){
+                cout <<name[i] <<"\t"<<mark[i] <<endl ;
+                }
+          }
+    }break;
+  ///////////////////////////
+    case 5:{
+            for (int i=0 ;i<10;i++){
+                if (mark[i] >=10){
+                cout <<name[i] <<"\t"<<mark[i] <<endl ;
+                }
+            }
+    }break;
+  /////////////////////////
+    case 6 :{
+            float sum =0 ;
+        for (int i=0 ; i<10 ;i++){
+                sum =sum +mark[i] ;
+        }
+        cout << "The average = "<<sum/10 <<endl ;
+
+    }break;
+ ////////////////////////
+     case 7 :{
+                 string  name1 ;
+        cout <<"Enter student name:\n" ;
+        cin >> name1;
+        for (int i =0 ;i<10 ;i++){
+                if (name[i]==name1){
+        cout <<name[i] <<"\t" <<mark[i] <<endl ;
+                }
+        }
+     }break;
+
+////////////////////////////////
+    case 8 :{
+    float mark1 ;
+            cout << "Enter your mark:\n";
+            cin >>mark1 ;
+            for (int i =0; i<10;i++){
+            if (mark[i]==mark1){
+            cout <<name[i]<<"\t"<<mark[i] <<endl ;
+                    }
+                    }
+    }break;
+//////////////////////////////////
+    case 0:{
+    }break;
+        }
+    }while(j!=0) ;
+return 0;
+}
