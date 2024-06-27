@@ -1,0 +1,128 @@
+#include <iostream>
+#include<string>
+using namespace std;
+const int n =1;
+struct pharmacy
+{
+    float prize,conc;
+    string exp ,mfg,name,batch ;
+};
+int main()
+{
+     pharmacy st[n] ;
+    int namber ;
+while(namber<6)
+    {
+
+cout <<"press (1) to fill data base \n" ;
+cout <<"press (2) to print all data base\n";
+cout <<"press(3) to search with Batch\n";
+cout <<"press(4) to search with EX\n";
+cout <<"press(5) to search with name of medicine\n";
+cout <<"press(6) to return\n";
+cin>>namber ;
+
+    switch(namber)
+    {
+   //////////////////////////////////////////////////
+        case 1:{
+
+    for (int i=0; i<n;i++)
+    {
+
+        cout <<"please enter information of medicine no."<<endl ;
+        cout <<"please enter name of medicine  \n";
+        cin>>st[i].name;
+        cout <<"please enter prize of medicine\n";
+        cin >>st[i].prize;
+        cout <<"please enter MFG of medicine\n";
+        cin >>st[i].mfg;
+        cout <<"please enter EX of medicine\n";
+        cin>>st[i].exp ;
+        cout <<"please enter Batch of medicine\n";
+        cin>>st[i].batch;
+        cout <<"please enter concentration of medicine\n";
+        cin>>st[i].conc;
+
+    }
+        }
+        ////////////////////////////////////////////////////////////////////////////
+        case 2:{
+        cout <<"name"<<"\t"<<"prize"<<"\t"<<"conc"<<"\t"<<"MFG "<<"\t"<<"EX"<<"\t"<<"Batch"<<"\n";
+        for(int j=0;j<n;j++)
+        {
+            cout <<st[j].name<<"\t"<<st[j].prize<<"\t"<<st[j].conc<<"\t"<<st[j].mfg<<"\t"<<st[j].exp<<"\t"<<st[j].batch<<"\n";
+        }
+        break;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////
+        case 3:{
+            string bate1;
+                cout <<"please enter your Batch\n";
+                cin>>bate1;
+            for (int i=0;i<n;i++)
+            {
+                if (bate1==st[i].batch)
+                {
+                cout <<"name"<<"\t"<<"prize"<<"\t"<<"conc"<<"\t"<<"MFG "<<"\t"<<"EX"<<"\t"<<"Batch"<<"\n";
+                cout <<st[i].name<<"\t"<<st[i].prize<<"\t"<<st[i].conc<<"\t"<<st[i].mfg<<"\t"<<st[i].exp<<"\t"<<st[i].batch<<"\n";
+               }
+                else
+                {
+                    cout <<"Not found any medicine with this Batch\n" ;
+                    break;
+
+               }
+            }
+            break;
+            }
+            ////////////////////////////////////////////////////////////////////////////
+            case 4:
+                {
+            string exp1 ;
+            cout <<"please enter EXP of medicine\n";
+            cin>>exp1;
+                    for(int i=0;i<n;i++)
+                    {
+                    if (exp1==st[i].exp)
+                        {
+                cout <<"name"<<"\t"<<"prize"<<"\t"<<"conc"<<"\t"<<"MFG "<<"\t"<<"EX"<<"\t"<<"Batch"<<"\n";
+                cout <<st[i].name<<"\t"<<st[i].prize<<"\t"<<st[i].conc<<"\t"<<st[i].mfg<<"\t"<<st[i].exp<<"\t"<<st[i].batch<<"\n";
+                        }
+                        else
+                        {
+                            cout <<"Not found any medicine are EXP\n" ;
+                            break;
+                        }
+                    }
+                    break;
+                }
+                ///////////////////////////////////////////////////////////////////
+            case 5:
+                {
+                     string name1;
+                        cout <<"please enter Name of medicine\n";
+                        cin>>name1;
+                    for(int i=0;i<n;i++)
+                    {
+                        if (name1==st[i].name)
+                        {
+                cout <<"name"<<"\t"<<"prize"<<"\t"<<"conc"<<"\t"<<"MFG "<<"\t"<<"EX"<<"\t"<<"Batch"<<"\n";
+                cout <<st[i].name<<"\t"<<st[i].prize<<"\t"<<st[i].conc<<"\t"<<st[i].mfg<<"\t"<<st[i].exp<<"\t"<<st[i].batch<<"\n";
+                        }
+                        else{
+                          cout <<"Not found this medicine\n" ;
+                          break;
+                        }
+                    }
+                    break;
+                }
+                /////////////////////////////////////////////////////////
+            case 6:
+                {
+                     return 0;
+                }
+    }
+}
+    return 0;
+}
