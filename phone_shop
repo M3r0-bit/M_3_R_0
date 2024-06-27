@@ -1,0 +1,238 @@
+#include <iostream>
+#include <string>
+using namespace std;
+const int n=1;
+struct phones   {
+    string name_phone;
+    string type_phone ;
+    string color_phone ;
+    string status ;
+    string manfacure_compony_phone ;
+    int serial_number_phone ;
+    float prize_phone ;
+};
+struct head_phones {
+    string name_head_phone ;
+    string type_head ;
+    string manfacure_company_head_phones ;
+    string color_head_phone ;
+   int serial_number_head ;
+    float prize_head_phone ;
+};
+struct covers{
+    string name_cover ;
+    string type_cover;
+    string color_cover ;
+   int serial_number_cover ;
+    float prize_covers ;
+};
+struct phone_shop {
+    phones PH ;
+    head_phones  HP ;
+    covers C ;
+};
+int main() {
+phone_shop P[n] ;
+int num ;
+do{
+cout <<"please Press [1] to fill data base of phone shop. \n" ;
+cout <<"please Press [2] to Displays all data base.\n";
+cout <<"please Press [3] to search by serial number.\n" ;
+cout <<"please Press [4] to search by the name of manufacture company .\n";
+cout <<"please Press [5] to search by name.\n";
+cout <<"please Press [6] to Exit.\n"   ;
+cin >>num ;
+switch(num)
+{
+case 1:
+    {
+        for (int i=0; i<n;i++){
+        cout <<"Enter your name of phone: ";
+        cin>>P[i].PH.name_phone ;
+        cout <<"Enter your type of phone( Android, Iphone ): ";
+        cin>>P[i].PH.type_phone ;
+         cout <<"Enter your name of manufacture company of phone: ";
+        cin >>P[i].PH.manfacure_compony_phone ;
+        cout <<"Enter your status of phone ( New , Used ):";
+        cin >> P[i].PH.status ;
+        cout <<"Enter your prize of phone: ";
+        cin >>P[i].PH.prize_phone ;
+         cout <<"Enter your color of phone: ";
+        cin >> P[i].PH.color_phone ;
+         cout <<"Enter your serial number of phone: ";
+        cin >>P[i].PH.serial_number_phone ;
+        ///////////////////////////////////
+           cout <<"Enter your name of head phone : ";
+        cin >>P[i].HP.name_head_phone  ;
+           cout <<"Enter your type of head phone ( wired , Bluetooth ): ";
+        cin >>P[i].HP.type_head  ;
+           cout <<"Enter your the name of manufacture company of head phone : ";
+        cin >>P[i].HP.manfacure_company_head_phones  ;
+           cout <<"Enter your the color of head phone : ";
+        cin >>P[i].HP.color_head_phone ;
+           cout <<"Enter your the prize of head phone : ";
+        cin >>P[i].HP.prize_head_phone  ;
+           cout <<"Enter your serial of number of head phone : ";
+        cin >>P[i].HP.serial_number_head  ;
+        ////////////////////////////////////
+           cout <<"Enter your name of phone cover : ";
+        cin >>P[i].C.name_cover  ;
+           cout <<"Enter your type of phone cover ( Android, Iphone ) : ";
+        cin >>P[i].C.type_cover  ;
+           cout <<"Enter your color of cover : ";
+        cin >>P[i].C.color_cover;
+           cout <<"Enter your prize of cover : ";
+        cin >>P[i].C.prize_covers  ;
+           cout <<"Enter your serial number of cover : ";
+        cin >>P[i].C.serial_number_cover  ;
+    }
+    break ;
+    }
+///////////////////////////////////////////////////////////////////////////
+case 2 :
+{
+     for (int i=0; i<n;i++){
+         cout <<"The name of phone : "<<P[i].PH.name_phone <<"\n" ;
+        cout <<"The type of phone : "<<P[i].PH.type_phone<<"\n" ;
+        cout <<"The name of manufacture company of phone : "<<P[i].PH.manfacure_compony_phone<<"\n" ;
+        cout <<"The status of phone : "<<P[i].PH.status<<"\n" ;
+        cout <<"The prize of phone : "<<P[i].PH.prize_phone<<"\n" ;
+         cout <<"The color of phone : "<< P[i].PH.color_phone <<"\n";
+         cout <<"The serial number of phone : "<<P[i].PH.serial_number_phone<<"\n" ;
+cout<<"-------------------------------------------------------------------\n";
+           cout <<"The name of head phone : "<<P[i].HP.name_head_phone<< "\n" ;
+           cout <<"The type of head phone ( wired , Bluetooth ) : "<<P[i].HP.type_head<<"\n" ;
+           cout <<"The name of manufacture company of head phone : "<<P[i].HP.manfacure_company_head_phones <<"\n" ;
+           cout <<"The color of head phone : "<<P[i].HP.color_head_phone<<"\n" ;
+           cout <<"The prize of head phone : "<<P[i].HP.prize_head_phone <<"\n" ;
+           cout <<"The number of head phone : "<<P[i].HP.serial_number_head<<"\n";
+cout<<"---------------------------------------------------------------\n";
+           cout <<"The name of phone cover : "<<P[i].C.name_cover<<"\n";
+           cout <<"The type of phone cover : "<<P[i].C.type_cover<<"\n";
+           cout <<"The color of cover : "<<P[i].C.color_cover<<"\n";
+           cout <<"The prize of cover : "<<P[i].C.prize_covers<<"\n" ;
+           cout <<"The serial number of cover : "<<P[i].C.serial_number_cover<<"\n";
+    }
+    break;
+}
+////////////////////////////////////////////////////////////////////////////
+case 3 :
+    {
+         long int num1 ;
+        cout <<"please Enter the serial number : ";
+        cin>>num1 ;
+        for (int i=0;i<n;i++)
+        {
+            if(num1==P[i].PH.serial_number_phone)
+            {
+       cout <<"The name of phone : "<<P[i].PH.name_phone <<"\n" ;
+        cout <<"The type of phone : "<<P[i].PH.type_phone<<"\n" ;
+        cout <<"The name of manufacture company of phone : "<<P[i].PH.manfacure_compony_phone<<"\n" ;
+        cout <<"The status of phone : "<<P[i].PH.status<<"\n" ;
+        cout <<"The prize of phone : "<<P[i].PH.prize_phone<<"\n" ;
+         cout <<"The color of phone : "<< P[i].PH.color_phone <<"\n";
+         cout <<"The serial number of phone : "<<P[i].PH.serial_number_phone<<"\n" ;
+            }
+           else if (num1==P[i].HP.serial_number_head)
+           {
+            cout <<"The name of head phone : "<<P[i].HP.name_head_phone<<"\n" ;
+           cout <<"The type of head phone ( wired , Bluetooth ) : "<<P[i].HP.type_head<<"\n" ;
+           cout <<"The of manufacture company of head phone : "<<P[i].HP.manfacure_company_head_phones <<"\n" ;
+           cout <<"The color of head phone : "<<P[i].HP.color_head_phone<<"\n" ;
+           cout <<"The prize of head phone : "<<P[i].HP.prize_head_phone <<"\n" ;
+           cout <<"The number of head phone : "<<P[i].HP.serial_number_head<<"\n";
+           }
+           else if (num1==P[i].C.serial_number_cover)
+           {
+            cout <<"The name of phone cover : "<<P[i].C.name_cover<<"\n";
+           cout <<"The type of phone cover : "<<P[i].C.type_cover<<"\n";
+           cout <<"The color of cover : "<<P[i].C.color_cover<<"\n";
+           cout <<"The prize of cover : "<<P[i].C.prize_covers<<"\n" ;
+           cout <<"The serial number of cover : "<<P[i].C.serial_number_cover<<"\n";
+           }
+        }
+        break ;
+    }
+///////////////////////////////////////////////////////////////////////
+case 4 :
+    {
+        string name_of_manfacure_comany ;
+        cout <<"please Enter name_of_manfacure_comany : ";
+        cin>>name_of_manfacure_comany;
+        for (int i=0; i<n;i++)
+        {
+            if (name_of_manfacure_comany==P[i].PH.manfacure_compony_phone)
+            {
+      cout <<"The name of phone : "<<P[i].PH.name_phone <<"\n" ;
+        cout <<"The type of phone : "<<P[i].PH.type_phone<<"\n" ;
+        cout <<"The name of manufacture company of phone : "<<P[i].PH.manfacure_compony_phone<<"\n" ;
+        cout <<"The status of phone : "<<P[i].PH.status<<"\n" ;
+        cout <<"The prize of phone : "<<P[i].PH.prize_phone<<"\n" ;
+         cout <<"The color of phone : "<< P[i].PH.color_phone <<"\n";
+         cout <<"The serial number of phone : "<<P[i].PH.serial_number_phone<<"\n" ;
+            }
+            else if (name_of_manfacure_comany==P[i].HP.manfacure_company_head_phones)
+            {
+            cout <<"The name of head phone : "<<P[i].HP.name_head_phone<<"\n"  ;
+           cout <<"The type of head phone ( wired , Bluetooth ) : "<<P[i].HP.type_head<<"\n" ;
+           cout <<"The of manufacture company of head phone : "<<P[i].HP.manfacure_company_head_phones <<"\n" ;
+           cout <<"The color of head phone : "<<P[i].HP.color_head_phone<<"\n" ;
+           cout <<"The prize of head phone : "<<P[i].HP.prize_head_phone <<"\n" ;
+           cout <<"The number of head phone : "<<P[i].HP.serial_number_head<<"\n";
+            }
+        }
+        break ;
+    }
+///////////////////////////////////////////////////////////////
+case 5:
+    {
+        string name_of_Product ;
+        cout<<"please Enter your name of Product \n";
+        cin >>name_of_Product ;
+        for (int i=0 ;i<n;i++)
+        {
+            if (name_of_Product==P[i].PH.name_phone)
+            {
+       cout <<"The name of phone : "<<P[i].PH.name_phone <<"\n" ;
+        cout <<"The type of phone : "<<P[i].PH.type_phone<<"\n" ;
+        cout <<"The name of manufacture company of phone : "<<P[i].PH.manfacure_compony_phone<<"\n" ;
+        cout <<"The status of phone : "<<P[i].PH.status<<"\n" ;
+        cout <<"The prize of phone : "<<P[i].PH.prize_phone<<"\n" ;
+         cout <<"The color of phone : "<< P[i].PH.color_phone <<"\n";
+         cout <<"The serial number of phone : "<<P[i].PH.serial_number_phone<<"\n" ;
+            }
+            else if (name_of_Product==P[i].HP.name_head_phone)
+            {
+            cout <<"The name of head phone : "<<P[i].HP.name_head_phone  ;
+           cout <<"The type of head phone ( wired , Bluetooth ) : "<<P[i].HP.type_head<<"\n" ;
+           cout <<"The of manufacture company of head phone : "<<P[i].HP.manfacure_company_head_phones <<"\n" ;
+           cout <<"The color of head phone : "<<P[i].HP.color_head_phone<<"\n" ;
+           cout <<"The prize of head phone : "<<P[i].HP.prize_head_phone <<"\n" ;
+           cout <<"The number of head phone : "<<P[i].HP.serial_number_head<<"\n";
+            }
+            else if (name_of_Product==P[i].C.name_cover)
+            {
+           cout <<"The name of phone cover : "<<P[i].C.name_cover<<"\n";
+           cout <<"The type of phone cover : "<<P[i].C.type_cover<<"\n";
+           cout <<"The color of cover : "<<P[i].C.color_cover<<"\n";
+           cout <<"The prize of cover : "<<P[i].C.prize_covers<<"\n" ;
+           cout <<"The serial number of cover : "<<P[i].C.serial_number_cover<<"\n";
+            }
+        }
+        break ;
+    }
+/////////////////////////////////////////////////////////////
+case 6 :
+    {
+        exit(0) ;
+    }
+///////////////////////////////////////////////////////////
+default :
+    {
+        cout <<"wrong choice.. try again\n" ;
+
+    }
+}
+ }while(num!=6) ;
+    return 0;
+}
