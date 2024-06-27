@@ -1,0 +1,154 @@
+#include <iostream>
+#include <string>
+using namespace std;
+const int n=3;
+struct car_plate {
+    string letters ;
+    int nums ;
+};
+struct time {
+    int hours ;
+    int minutes;
+    int seconds;
+};
+struct traffic_violation {
+    string location ;
+    car_plate C ;
+    time  T;
+    float speed ;
+};
+
+int main() {
+
+traffic_violation  V[n] ;
+int num ;
+do{
+cout <<"please Press [1] to fill data. \n" ;
+cout <<"please Press [2] to Displays Traffic violation for all cars.\n";
+cout <<"please Press [3] to search Traffic violation by Car Plate .\n" ;
+cout <<"please Press [4] to search for a traffic violation using Location.\n";
+cout <<"please Press [5] to search for a traffic violation using Time.\n";
+cout <<"please Press [6] to Exit.\n"   ;
+cin >>num ;
+switch(num)
+{
+case 1:
+    {
+        for (int i=0; i<n;i++){
+        cout <<"Enter your Letters of car_plate: ";
+        cin>>V[i].C.letters ;
+        cout <<"Enter your Numbers of car_plate: ";
+        cin>>V[i].C.nums ;
+        cout <<"Enter your Location of Traffic violation:";
+        cin >> V[i].location ;
+        cout <<"Enter your speed :" ;
+        cin >>V[i].speed ;
+        cout <<"Enter your Time of Traffic violation [Hours]: ";
+        cin >> V[i].T.hours ;
+         cout <<"Enter your Time of Traffic violation [Minute]: ";
+        cin >> V[i].T.minutes ;
+         cout <<"Enter your Time of Traffic violation [Seconds]: ";
+        cin >> V[i].T.seconds ;
+    }
+    break ;
+    }
+///////////////////////////////////////////////////////////////////////////
+case 2 :
+{
+     for (int i=0; i<n;i++){
+       cout <<"The car_plate:\t\t";
+        cout <<"The Location of Traffic violation: \t";
+        cout <<"the speed of car: \t ";
+        cout <<"Time of Traffic violation [Hours : Minute : Seconds]:\n";
+         cout <<V[i].C.letters <<" | "<<V[i].C.nums<<"\t\t" ;
+         cout <<V[i].location<<"\t\t\t\t\t" ;
+         cout <<V[i].speed<<"\t\t\t\t\t" ;
+        cout <<"["<<V[i].T.hours <<" : "<<V[i].T.minutes <<" : "<<V[i].T.seconds <<"]"<<"\n";
+    }
+    break;
+}
+////////////////////////////////////////////////////////////////////////////
+case 3 :
+    {
+        string letter ;
+        int num1 ;
+        cout <<"please Enter the Letters of car : ";
+        cin>>letter ;
+        cout <<"please Enter the Number of car : ";
+        cin>>num1 ;
+        for (int i=0;i<n;i++)
+        {
+            if(num1==V[i].C.nums && letter==V[i].C.letters)
+            {
+     cout <<"The car_plate:\t\t";
+        cout <<"The Location of Traffic violation: \t";
+        cout <<"the speed of car: \t ";
+        cout <<"Time of Traffic violation [Hours : Minute : Seconds]:\n";
+         cout <<V[i].C.letters <<" | "<<V[i].C.nums<<"\t\t" ;
+         cout <<V[i].location<<"\t\t\t\t\t" ;
+         cout <<V[i].speed<<"\t\t\t\t\t" ;
+        cout <<"["<<V[i].T.hours <<" : "<<V[i].T.minutes <<" : "<<V[i].T.seconds <<"]"<<"\n";
+            }
+        }
+        break ;
+    }
+///////////////////////////////////////////////////////////////////////
+case 4 :
+    {
+        string loc ;
+        cout <<"please Enter The Location of Traffic violation : ";
+        cin>>loc;
+        for (int i=0; i<n;i++)
+        {
+            if (loc==V[i].location)
+            {
+     cout <<"The car_plate:\t\t";
+        cout <<"The Location of Traffic violation: \t";
+        cout <<"the speed of car: \t ";
+        cout <<"Time of Traffic violation [Hours : Minute : Seconds]:\n";
+         cout <<V[i].C.letters <<" | "<<V[i].C.nums<<"\t\t" ;
+         cout <<V[i].location<<"\t\t\t\t\t" ;
+         cout <<V[i].speed<<"\t\t\t\t\t" ;
+        cout <<"["<<V[i].T.hours <<" : "<<V[i].T.minutes <<" : "<<V[i].T.seconds <<"]"<<"\n";
+            }
+        }
+        break ;
+    }
+///////////////////////////////////////////////////////////////
+case 5:
+    {
+        int hour1,minutes1,seconds1 ;
+        cout<<"please Enter Time of Traffic violation [Hours : Minute : Seconds] \n";
+        cin >>hour1>>minutes1>>seconds1 ;
+        for (int i=0 ;i<n;i++)
+        {
+            if (hour1==V[i].T.hours && minutes1==V[i].T.minutes && seconds1== V[i].T.seconds)
+            {
+     cout <<"The car_plate:\t\t";
+        cout <<"The Location of Traffic violation: \t";
+        cout <<"the speed of car: \t ";
+        cout <<"Time of Traffic violation [Hours : Minute : Seconds]:\n";
+         cout <<V[i].C.letters <<" | "<<V[i].C.nums<<"\t\t" ;
+         cout <<V[i].location<<"\t\t\t\t\t" ;
+         cout <<V[i].speed<<"\t\t\t\t\t" ;
+        cout <<"["<<V[i].T.hours <<" : "<<V[i].T.minutes <<" : "<<V[i].T.seconds <<"]"<<"\n";
+            }
+        }
+        break ;
+    }
+/////////////////////////////////////////////////////////////
+case 6 :
+    {
+        exit(0) ;
+    }
+///////////////////////////////////////////////////////////
+default :
+    {
+        cout <<"wrong choice.. try again\n" ;
+
+    }
+}
+ }while(num!=6) ;
+    return 0;
+}
+  
